@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: finance_economics
+    description: Finance and economics data including stock prices
+    database: finance_economics
+    schema: cybersyn
+    tables:
+      - name: stock_price_timeseries
+        description: Stock price timeseries data
+        
