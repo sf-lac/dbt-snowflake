@@ -39,7 +39,7 @@ models:
   dbt_snowflake_finance:
     # Applies to all files under models/subdirectory/
         # Applies to all files under models/subdirectory/
-    #marts:
-    #  +materialized: table
+    marts:
+      +materialized: table
     staging:
       +materialized: view
