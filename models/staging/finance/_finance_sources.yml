@@ -7,5 +7,7 @@ sources:
     schema: cybersyn
     tables:
       - name: stock_price_timeseries
-        description: Stock price timeseries data
+        description: Stock price timeseries data - daily prices (open/close, high/low) & trading volumes of US securities executed on the Nasdaq.
+      - name: fx_rates_timeseries
+        description: Foreign exchange rates timeseries for currency pairs (base and quote currencies)
         
