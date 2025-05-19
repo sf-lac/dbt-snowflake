@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: int_finance__fx_rates
+    description: "An intermediate model that filters stg_finance__fx_rates staging model by exchange_date"
+    columns:
+      - name: indicator||exchange_date
+        tests:
+          - unique
+          - not_null
+
+  - name: int_finance__trading_books_unioned
+    description: "An intermediate model that unions seeded data in CSV files"
+    columns:
+      - name: instrument
+        tests:
+          - not_null
+          - relationships:
+              to: ref('int_finance__stock_history')
+              field: company_symbol
+
+  - name: int_finance__stock_history
+    description: "An intermediate model that pivots the stg_finance__stock_history model by indicator"
+    columns:
+      - name: company_symbol||stock_date
+        tests:
+          - not_null
+          - unique

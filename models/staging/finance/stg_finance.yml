@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: stg_finance__stock_history
+    description: Staged stock prices historical data.
+    columns:      
+      - name: indicator
+        description: '{{doc("trading_indicator")}}'
+        tests:
+          - accepted_values:
+              values:
+                - all-day_high
+                - all-day_low
+                - pre-market_open
+                - post-market_close
+                - nasdaq_volume
